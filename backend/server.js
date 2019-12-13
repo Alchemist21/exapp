@@ -16,10 +16,10 @@ mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }
 const connection = mongoose.connection;
 connection.once('open', () => {
     console.log("MongoDB database connection established successfully");
-});
+})
 
 const exercisesRouter = require('./routes/exercises');
-const userRouter = require('./routes/users');
+const usersRouter = require('./routes/users');
 
 app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
@@ -27,3 +27,5 @@ app.use('/users', usersRouter);
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
+
+
